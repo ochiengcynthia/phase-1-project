@@ -181,7 +181,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Update the model object in the `models` array
                 models[index] = data;
         
-                // Update the card with the new data
                 cardTitle.innerText = data.name;
                 cardImage.src = data.poster;
                 cardCategory.innerText = `Category: ${data.category}`;
@@ -208,9 +207,14 @@ document.addEventListener("DOMContentLoaded", function() {
         card.appendChild(cardImage);
         card.appendChild(cardBody);
 
-        // Create a form for adding new models
-const form = document.createElement("form");
-form.innerHTML = `
+       
+        modelsContainer.appendChild(card);
+
+         // Create a form for adding new models
+if (!document.getElementById("model-form")){
+  const form = document.createElement("form");
+  form.id = "model-form";
+  form.innerHTML = `
   <div class="form">
     <label for="name">Name:</label>
     <input type="text" class="form-control" id="name" required>
@@ -245,7 +249,6 @@ form.innerHTML = `
   </div>
   <button type="submit" class="btn btn-primary">Add Model</button>
 `;
-modelsContainer.insertBefore(form, modelsContainer.firstChild);
 
 // Add event listener for submitting the form
 form.addEventListener("submit", (event) => {
@@ -274,17 +277,17 @@ form.addEventListener("submit", (event) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      // Create a new card for the new model and add it to the HTML
-      /*const newCard = createCard(data);
-      modelsContainer.appendChild(newCard);*/
 
+      const newCard = createCard (data);
+      modelsContainer.appendChild(newCard);
+     
       // Reset the form
       form.reset();
     })
     .catch((error) => console.error(error));
 });
-
-        modelsContainer.appendChild(card);
+document.body.appendChild(form);
+}
 
         index++;
       });
