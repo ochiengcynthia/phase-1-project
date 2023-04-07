@@ -1,1 +1,8 @@
 # phase-1-project
+this is the creation of a frontend interface for displaying, booking, updating and deleting a list of models fetched from the srver 
+a list of models is fetched from the server and is looped through to create a HTML card element for each model. this includes the model's image, name, availability,category and a set of buttons for booking the model, displaying a model's details, liking the model, updating the model's details and also deleting a model.
+when the "MODEL DETAILS" button is clicked, a new set of html elements is created and appended to the card to display the details of the model.
+When the "DELETE MODEL" button is clicked, a confirmation dialog appears, prompting the user to confirm if they want to delete the model or not. If the user confirms, the model will be deleted on the browser and on the server too.
+if the user clicks the "BOOK MODEL" button, a PATCH request is sent to the server to change the availability status of the model to "unavailable". The button is disabled and shows that the model is booked.
+When the "👍" button is clicked, the number of likes for the model is increased and displayed on the model's card.
+incase the user want to update the details of the model or change the model's details, the "UPDATE DETAIL" displays input fields for updating the model's details and beneath it, there is a "Save Changes" button that sents a PUT request to the server to update the details of the model in the database.

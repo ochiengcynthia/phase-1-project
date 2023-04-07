@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
   const modelsContainer = document.getElementById('models-container');
-  const searchInput = document.getElementById("searchInput");
 
   // Fetch models from server
   fetch('http://localhost:3000/Models')
@@ -22,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const cardLikes = document.createElement("span");
         const cardButton5 = document.createElement("button");
 
+        //set values and attributes for the elements
         cardTitle.innerText = model.name;
         cardImage.src = model.poster;
         cardCategory.innerText = `Category: ${model.category}`;
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         card.setAttribute("class", "card");
         cardBody.setAttribute("class", "card-body");
 
-
+//add click event listener to the MODEL DETAILS button
         cardButton1.addEventListener("click", () => { 
           const cardDetails = document.createElement("div");
           const cardGender = document.createElement("p");
@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
           cardAvailability.innerText=`Availability: ${model.availability}`;
           cardDescription.innerText = `Description: ${model.description}`;
 
+          //append model details to card body
           cardDetails.appendChild(cardGender);
           cardDetails.appendChild(cardAge);
           cardDetails.appendChild(cardHeight);
@@ -73,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         });
 
-
+////add click event listener to the DELETE MODEL button
         cardButton4.addEventListener("click", () => {
           if(confirm("delete model?")) {
             fetch(`http://localhost:3000/Models/${model.id}`,{
@@ -193,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function() {
           });
         });
 
-
+//append elements to the card and cardbody 
         cardBody.appendChild(cardButton5);
         cardBody.appendChild(cardTitle);
         cardBody.appendChild(cardCategory);

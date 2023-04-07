@@ -11,11 +11,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
 }
 
 header h1 {
   font-size: 2rem;
   margin: 0;
+text-align: center;
 }
 
 header input[type="text"] {
@@ -23,6 +25,7 @@ header input[type="text"] {
   font-size: 1.2rem;
   border: none;
   border-radius: 5px;
+  text-align: center;
 }
 
 main {
@@ -36,16 +39,12 @@ main {
 .card {
   display: inline-block;
   position: relative;
-  background-color: orange;
+  background-color: orangered;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
   width: 300px;
   margin-right: 20px;
-}
-
-.card:last-of-type {
-  margin-right: 0;
 }
 
 .card img {
@@ -93,7 +92,7 @@ button{
   background-color: #61452e;
 }
 body{
-  background-color: orangered;
+  background-image: url("https://www.design.svgbackgrounds.com/wp-content/uploads/2021/05/protruding-squares-orange-background.png");
 }
 .book-button {
   background-color:white;
@@ -106,8 +105,17 @@ body{
 }
 
 .booked {
-  background-color: white;
+  background-color: rgb(212, 111, 111);
   color: #fff;
   cursor: default;
 }
+p{
+  text-align: center;
+  font-size: larger;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+form{
+position: relative;
+} 
+
 
